@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangalore City Covers</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped styling to prevent interference */
+    .user-auth-container {
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+  
+    .form-container {
+      display: none;
+    }
+  
+    .form-container.active {
+      display: block;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #218838;
+    }
+  
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bangalore Smart City Portal</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="events.html">Live Events</a></li>
+        <li><a href="transport.html">Public Transport</a></li>
+        <li><a href="medical.html">Medical Services</a></li>
+        <li><a href="tourism.html">Tourism</a></li>
+        <li><a href="weather.html">Weather</a></li> -->
+        <li><a href="emergency.html">Emergency</a></li>
+        <li><a href="news.html">News</a></li>
+        <!-- <li><a href="maps.html">Maps</a></li> -->
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <h2>Welcome to Bangalore Smart City</h2>
+      <p>Your one-stop portal for all information related to Bangalore city.</p>
+      <section class="image-slider">
+        <h2 class="animate__animated animate__fadeIn">Explore Bangalore</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <a href="https://english.bmrc.co.in/" target="_blank"><img src="pic1.jpeg" alt="Bangalore Image 1" /></a>
+                <a href="https://www.tomtom.com/traffic-index/bengaluru-traffic/" target="_blank"><img src="pic2.jpeg" alt="Bangalore Image 2" /></a>
+                <a href="https://www.phoenixmarketcity.com/bangalore/dine/third-wave-coffee/418" target="_blank"><img src="pic3.jpeg" alt="Bangalore Image 3" /></a>
+                <a href="https://www.bengaluruairport.com/" target="_blank"><img src="pic4.jpeg" alt="Bangalore Image 4" /></a>
+                <a href="https://builtinbengaluru.in/articles/multinational-companies-in-bangalore" target="_blank"><img src="pic5.jpeg" alt="Bangalore Image 1" /></a>
+                <a href="https://www.tripadvisor.in/Attraction_Review-g297628-d8124216-Reviews-Commercial_Street-Bengaluru_Bangalore_District_Karnataka.html" target="_blank"><img src="pic6.jpeg" alt="Bangalore Image 2" /></a>
+                <a href="https://builtinbengaluru.in/articles/multinational-companies-in-bangalore" target="_blank"><img src="pic7.jpeg" alt="Bangalore Image 3" /></a>
+                <a href="https://www.phoenixmarketcity.com/bangalore" target="_blank"><img src="pic8.jpeg" alt="Bangalore Image 4" /></a>
+                <a href="https://dpl.karnataka.gov.in/page/Contact+Info/City+Central+Libraries/en" target="_blank"><img src="pic9.jpeg" alt="Bangalore Image 4" /></a>
+            </div>
+        </div>
+    </section>
+    
+      <!-- <img src="Bangalore palace.jpg" alt="Bangalore Skyline" class="animate__animated animate__zoomIn" /> -->
+      <div class="feature-section">
+        <div class="feature">
+          <h3>Live Events</h3>
+          <p>Stay updated with the latest events happening in the city.</p>
+          <a href="events.html">View Events</a>
+        </div>
+        <div class="feature">
+          <h3>Public Transport</h3>
+          <p>Find all the public transport options available.</p>
+          <a href="transport.html">View Transport</a>
+        </div>
+        <div class="feature">
+          <h3>Medical Services</h3>
+          <p>Access medical services and hospitals in Bangalore.</p>
+          <a href="medical.html">View Medical Services</a>
+        </div>
+        <div class="feature">
+          <h3>Tourism</h3>
+          <p>Explore the best tourist spots in Bangalore.</p>
+          <a href="tourism.html">View Tourism Info</a>
+        </div>
+        <div class="feature">
+            <h3>Weather</h3>
+            <p>Check out the climatic conditions.</p>
+            <a href="weather.html">View Weather Info</a>
+          </div>
+          <div class="feature">
+            <h3>Maps</h3>
+            <p>Explore Bangalore.</p>
+            <a href="maps.html">View Maps</a>
+          </div>
+      </div>
+    </section>
+  </main>
+  <div class="user-auth-container">
+    <h2 id="form-title">Login</h2>
+  
+    <!-- Login Form -->
+    <div id="login-form" class="form-container active">
+      <form onsubmit="return validateLoginForm()">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <button class="toggle-btn" onclick="toggleForm()">Don't have an account? Register</button>
+    </div>
+  
+    <!-- Register Form -->
+    <div id="register-form" class="form-container">
+      <form onsubmit="return validateRegisterForm()">
+        <input type="text" id="register-username" placeholder="Username" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <button class="toggle-btn" onclick="toggleForm()">Already have an account? Login</button>
+    </div>
+  </div>
+  <script>
+    // Toggle between login and register forms
+    function toggleForm() {
+      const loginForm = document.getElementById("login-form");
+      const registerForm = document.getElementById("register-form");
+      const formTitle = document.getElementById("form-title");
+  
+      if (loginForm.classList.contains("active")) {
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+        formTitle.textContent = "Register";
+      } else {
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+        formTitle.textContent = "Login";
+      }
+    }
+  
+    // Validate login form
+    function validateLoginForm() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+  
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+  
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+  
+      return true;
+    }
+  
+    // Validate register form
+    function validateRegisterForm() {
+      const username = document.getElementById("register-username").value;
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+  
+      if (username.trim() === "") {
+        alert("Please enter a username.");
+        return false;
+      }
+  
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+  
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+  
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+  
+      return true;
+    }
+  
+    // Email validation helper function
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2024 Bangalore Smart City Portal</p>
+  </footer>
+</body>
+</html>
